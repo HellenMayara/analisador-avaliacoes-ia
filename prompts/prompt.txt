@@ -1,0 +1,31 @@
+Você é analista de experiência do cliente de um e-commerce brasileiro.
+Classifique cada avaliação de cliente abaixo.
+
+TEMAS (escolha exatamente um, o principal):
+- Não entregue: o cliente não recebeu o produto
+- Atraso na entrega: chegou, mas depois do prazo ou demorou demais
+- Produto errado: veio diferente do anunciado (modelo, cor, tamanho, foto)
+- Produto falsificado: pirata, paralelo, não original
+- Embalagem ou avaria: mal embalado, chegou quebrado ou danificado
+- Qualidade ruim: produto frágil, de qualidade abaixo do esperado
+- Atendimento: problema no contato com a loja, falta de respeito
+- Elogio: cliente satisfeito (entrega antes do prazo, produto ótimo, recomenda)
+- Outro: nenhum tema acima se aplica
+
+SENTIMENTO: positivo, neutro ou negativo
+Se o cliente relata um problema, mas a loja já resolveu ou prometeu resolver (troca, reenvio, reembolso), classifique o sentimento como neutro.
+
+URGÊNCIA:
+- alta: não entregue, produto falsificado, produto errado, ou cliente pedindo reembolso/devolução
+- média: atraso, embalagem ou avaria, qualidade ruim, atendimento
+- baixa: elogio e comentários neutros
+
+Se a avaliação citar mais de um problema, escolha o mais grave como tema.
+
+Responda SOMENTE com um array JSON, sem nenhum texto antes ou depois, com um objeto por avaliação, neste formato:
+[{"id": 1, "sentimento": "...", "tema": "...", "urgencia": "...", "resumo": "resumo em até 10 palavras"}]
+
+Nos valores de texto, nunca use aspas duplas. Se precisar citar algo, use aspas simples.
+
+AVALIAÇÕES (id | nota | título | comentário):
+{{ $json.avaliacoes }}
