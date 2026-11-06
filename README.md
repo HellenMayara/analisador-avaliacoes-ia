@@ -2,7 +2,7 @@
 
 Automação que lê avaliações reais de clientes, usa IA para classificar cada uma por **sentimento, tema e urgência**, e alimenta um **dashboard interativo** com os principais motivos de insatisfação.
 
-**[Ver o dashboard ao vivo](https://datastudio.google.com/reporting/53e2f0be-560e-4e9a-8bf6-75e771aec6e7)** · **[Vídeo de demonstração](COLE_AQUI_O_LINK_DO_VIDEO)**
+**[Ver o dashboard ao vivo](https://datastudio.google.com/reporting/53e2f0be-560e-4e9a-8bf6-75e771aec6e7)** · **[Vídeo de demonstração](https://youtu.be/80bQ_nQ9qq4)**
 
 ![Dashboard](imagens/dashboard.png)
 
