@@ -14,6 +14,40 @@ Empresas de e-commerce e delivery recebem milhares de avaliações, e ninguém c
 
 Trabalhei 11 anos com atendimento ao cliente, negociação e resolução de problemas, e sei como uma reclamação sem resposta vira um cliente perdido. Este projeto automatiza a primeira leitura: a IA classifica, e as pessoas focam no que é urgente.
 
+## O processo: antes e depois
+
+**Antes:** cada avaliação é lida e classificada à mão.
+
+```mermaid
+flowchart LR
+    A["Avaliações chegam"] --> B["Uma pessoa lê<br/>uma por uma"]
+    B --> C["Decide tema<br/>e urgência"]
+    C --> D["Anota na<br/>planilha"]
+    D --> E["Monta o relatório<br/>à mão"]
+    B -. gargalo .-> X(("Urgentes esperam<br/>na fila"))
+```
+
+**Depois:** a IA faz a primeira leitura, e as pessoas focam no que é urgente.
+
+```mermaid
+flowchart LR
+    A["Avaliações na<br/>planilha"] --> B["n8n agrupa<br/>em lotes de 10"]
+    B --> C["Gemini classifica<br/>com regras fixas"]
+    C --> D{"Código confere<br/>o formato"}
+    D -- ok --> E["Grava na<br/>planilha"]
+    D -- defeito --> F["Marca ERRO - revisar<br/>e reprocessa"]
+    F --> B
+    E --> G["Dashboard<br/>atualiza sozinho"]
+    G --> H["Time abre direto<br/>as urgentes"]
+```
+
+| Gargalo no processo manual | Como a automação resolve |
+| --- | --- |
+| **Tarefa repetitiva:** ler e classificar centenas de avaliações, uma por uma | A IA classifica em lotes, e a pessoa só revisa |
+| **Critério que varia:** cada pessoa pode classificar o mesmo caso de um jeito | Regras fixas no prompt e lista fechada de temas |
+| **Urgentes perdidas na fila:** a reclamação grave espera junto com os elogios | Urgência marcada automaticamente e lista de urgentes no dashboard |
+| **Retrabalho no relatório:** montar os números à mão a cada período | Dashboard conectado à planilha, que se atualiza sozinho |
+
 ## A solução
 
 ![Fluxo no n8n](imagens/fluxo.png)
